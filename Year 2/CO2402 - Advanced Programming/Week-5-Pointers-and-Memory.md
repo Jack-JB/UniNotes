@@ -30,7 +30,7 @@
 ## Variables and addresses
 
 - A variable has an address in memory. This is the case with all variables
-- The address of a variable is given by placing an ampersand Infront of the variable
+- The address of a variable is given by placing an ampersand in front of the variable
 - A pointer stores the memory location of another variable
 - Pointers 'point at' variables
 
