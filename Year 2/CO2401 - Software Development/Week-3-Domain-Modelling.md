@@ -1,7 +1,5 @@
 # Object Oriented Software Development & Domain Modelling
 
-----
-
 ## Key Software Development Concepts
 
 - Abstraction

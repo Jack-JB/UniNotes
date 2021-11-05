@@ -1,7 +1,5 @@
 # Requirements
 
-----
-
 ## Syntax of Requirements
 
 - **[Condition] [Subject] [Action] [Object] [Constraint]**

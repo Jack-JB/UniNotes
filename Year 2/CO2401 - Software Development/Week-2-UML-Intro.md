@@ -1,9 +1,5 @@
 # UML Introduction and CRC Cards
 
-----
-
-
-
 ## Object Oriented Analysis & Design
 
 - What is it?
