@@ -11,3 +11,4 @@
 - Every time an old element is **popped** on to the stack the value which stores the location of the stop of the stack is decresed by one
 
   
+
