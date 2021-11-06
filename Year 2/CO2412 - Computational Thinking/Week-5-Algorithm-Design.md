@@ -1,7 +1,5 @@
 # Week 5 - Algorithm Design
 
-----
-
 **Design Strategies** Concern algorithm and code development at a more abstract level that that of its implementation. They are established approaches for designing algorithms/they all have their own strengths and weaknesses.
 
 - **Brute force:** Check all possible solutions, determine the right/best one
@@ -58,7 +56,64 @@ Where the decomposition of a problem into smaller parts leads to mutually **over
 
 To improve the decomposition efficiency in such cases, it can help to store and recall **partial solutions**. This strategy is called **dynamic programming**.
 
+> ## maximum sub-list problem
+>
+> **Precondition**: One argument is passed to the function, a list of floating-point and/or integer numbers.
+>
+> **Postcondition**: The function returns a sub-list, i.e. a contiguous part of the original list. such that the sum over all elements of the sub-list is as large as possible.
+>
+> **For example:**
+>
+> ```pseudocode
+> x = [-147, 72, -49, 40, 46, 35, 26, -69, 21, -5, -52, -40, 6, -133, 36]
+> has the maximum sublist x[1: 7] = [72, –49, 40, 46, 35, 26] with the sum 170.
+> ```
+>
+> 
 
+## Brute-force algorithm for a maximum sub-list sum
+
+- Try out all possible sub-lists, with index ``i`` running over all possible left limits and ``j`` over all right limits (greater than `i`)
+- Evaluate the sum of the elements of each sub-list
+- Keep track of the maximum; finally, return the maximum sub-list
+
+```python
+def brute_force_sublist(x):
+    # Keeps track of the maximum
+    left_idx, right_idx = 0, 0
+    max_sublist_sum = 0
+    # Try ALL possible sublists
+    for i in range(len(x)):
+        for j in range(i+1, len(x)+1):
+            # Sum the elments of each sub-list
+            sublist_sum = 0
+            for k in range(i, j):
+                sublist_sum += x[k]
+            # Track the maxium
+            if sublist_sum > max_sublist_sum:
+                left_idx = i
+                right_idx = j
+                max_sublist_sum = sublist_sum
+    # Return the largest max sub-list
+    return x[left_idx: right_idx]
+```
+
+- **Lines 3, 4, 13 - 16:** Keeps track of the maximum sub-list & maximum sum of each sub-list
+- **Lines 6, 7: ** Try out all possible sub-lists, with index ``i`` running over all possible left limits, and ``j`` over all right limits (greater than ``i``
+- **Lines 9 - 11: ** Evaluate the sum of the elements of each sublist
+- **Line 18:** Returns the maximum sublist
+
+### Time Efficiency
+
+```python
+for i in range(len(x)):						# Loop executed O(n) times
+	for j in range(i+1, len(x)+1): 		# Loop executed O(n) times
+    sublist_sum = 0										# O(1) instructions
+    for k in range(i, j):						 # Loop executed O(n) times:
+      sublist_sum += x[k]							# O(1) instructions
+      
+      																# O(n*n*n*1) = O(n³) Time Efficiency
+```
 
 
 
