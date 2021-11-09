@@ -10,7 +10,7 @@ private:
 	int top;
   int id;
 public:
-	Stack(); // Initialisng Default Constructor class
+	Stack(); // Initialisng Default Constructor method
   Stack(int newID);
 }
 
@@ -56,8 +56,9 @@ class Stack() {
 private:
 	int top;
 public:
-	Stack(); // Initialisng Constructor class
-}
+	Stack(); // Initialisng Constructor method
+ 	~Stack(); // Initialising Destructor method
+} 
 
 // Constructor
 Stack::Stack() {
@@ -65,7 +66,7 @@ Stack::Stack() {
 }
 
 // Destructor
-~Stack::Stack() {
+Stack::~Stack() {
   
 }
 ```
@@ -82,6 +83,8 @@ Stack::Stack() {
   - An example of this is linked lists. A `LinkedList` class manages an Element class. When the `LinkeList` class ends it needs to clean up any Element objects left around
 - It is common to see memory allocation in a class. Instances often need different amounts of data and so allocate memory on the fly
 - **TODO: finish**
+
+> If an object contains **dynamic memory** and the destructor is invoked, all of that memory will still remain and cause a memory leak.
 
 ### Syntax
 
