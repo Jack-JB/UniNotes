@@ -45,5 +45,26 @@ Dart is:
 - Compiled
 - Statically-typed
 - Object Oriented
-- **Finish this**
+- **TODO: Finish this**
 
+#### Hot Reload
+
+Remember Flutter has this feature that allows you to upgrade code whilst the app is running. this could be running on device, in the emulator or in the browser. this app will update with the change and even better it remembers the last state you were in.
+
+## Foundation
+
+Flutter is built around a process known as componentisation. componentisation is not new but we are recently using it as a way of developing software, the idea behind this is to break down a complex problem into smaller, simpler complex bits (decomposition). this helps us silve the problem as we focus **TODO: finish**
+
+## UI as Code
+
+Flutter uses the same Dart code to create the UI (presentation) and it does to create the logic (behaviour).
+
+Like many development platforms, a main function is present to load the app. this is named `runApp()` this function requires one widget to be provided. it can be named anything **TODO: finish**
+
+## Developing in Flutter
+
+When developing cross-platform here is a lot of moving parts that you need to assemble. the Flutter toolchain consists of the SDK, an IDE, IDE DevTools and an emulator
+
+- Flutter SDK: compiler, project creator, device manager, test runner, diagnose and correct problems
+- IDE: You can use pretty much any IDE. However, the most popular are VS Code
+- **TODO: Finish**
