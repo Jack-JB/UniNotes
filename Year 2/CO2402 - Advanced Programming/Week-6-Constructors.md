@@ -1,18 +1,32 @@
 # Constructors, Destructors and Inheritance
 
+A Constructor in C++ is a **special method** that is automatically called when an object of a class is created. A Constructor is initialised by creating a method with the same name as the Class.
+
 ## Constructors
 
 ```C++
 class Stack() {
 private:
 	int top;
+  int id;
 public:
-	Stack(); // Initialisng Constructor class
+	Stack(); // Initialisng Default Constructor class
+  Stack(int newID);
 }
 
+// Default constructor
 Stack::Stack() {
   top = 0;
 }
+
+// Declaring another constructor (function overloading)
+Stack::Stack(int newID) {
+  top = 0;
+  id = newID;
+}
+
+// Alternative way (preferred)
+Stack::Stack(int newID) : top(0), id(newID) { }
 ```
 
 ### Invoking the constructor
