@@ -19,8 +19,7 @@ Stack::Stack() {
 
 - The code below shows all three of the constructors being invoked
 - The parameters are placed inside round brackets after the class name,
-
-### Function overloading
+- Function overloading
 
 - **Overloading** is the practice of using the same name for different functions
   - The parameters must be different
@@ -59,3 +58,25 @@ Stack::Stack() {
 
 - The destructor is automatically called when a class is destroyed
 - You do not need to invoke 
+- **TODO: finish**
+
+### Why use destructors?
+
+- A destructor is a 'cleaning up' function
+- It is often the case that you have to clean up when a class ends
+- It is common to create manager classes - a class which manages another class
+  - An example of this is linked lists. A `LinkedList` class manages an Element class. When the `LinkeList` class ends it needs to clean up any Element objects left around
+- It is common to see memory allocation in a class. Instances often need different amounts of data and so allocate memory on the fly
+- **TODO: finish**
+
+### Syntax
+
+
+
+## Example
+
+- Consider a system to record student marks
+- Each student has a list of modules studied. Each module has an associated mark and a code
+- A fixed array is inefficient - a student can take between 1 - 7 modules depending on the circumstances. The data for the modules is therefore stored using dynamic memory. The memory is allocated as modules are registered.
+- **TODO: finish**
+
