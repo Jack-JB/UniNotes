@@ -82,7 +82,26 @@ Record* anotherRecord = new Record(10);
 
 ### Initialisation section 
 
-- A constructor may have
+- A constructor may have a special initialisation section.
+  - The initialisation section appears after the round brackets `()`, but before the opening brace `{` of the function body
+  - The section begins with a colon `:`
+  - List some, or all data members, to a comma separated list
+  - Each member variable has an initialising value in round brackets
+
+
+```cpp
+Record::Record() : num(3), value(12.4) {
+  // Constructor body
+}
+
+// is the same as
+Record::Record() {
+  num = 3;
+  value = 12.4
+}
+```
+
+
 
 ## Destructors
 
