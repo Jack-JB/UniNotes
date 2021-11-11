@@ -18,7 +18,39 @@ main() {
 - **List** - Can contain different types
 - **Map**
 - **Dynamic** - Can change type at any time
+- **Const** - Value cannot be changed
 
+### Arrays
+```dart
+// Arrays are dynmaic, size isnt required
+var arr = ['1', '2', '3', '4'];
+```
+### Maps
+```dart
+// ---- Map literal ----
+// Create a map variable
+var student = {"id": 001, "name": 'jack', "email": "name@email.com"};
+// Add to the map
+student["course"] = "Software Engineering";
+// ---- Map constructor ----
+// Create map constructor
+var student = new Map();
+// Add values
+student["id"] = 001;
+student["name"] = "Jack";
+student["email"] = "name@mail.com";
+student["course"] = "Software Engineering";
+```
+Maps contain a number of functions for example; 
+- `Keys` - Returns an iterable object representing `keys`
+- `Values` - Returns an iterable objects representing `values`
+- `Length` - Returns the size of the `map`
+- `isEmpty` - Returns `true` if the `map` is empty
+- `isNotEmpty` - Returns `true` if the `map` is empty
+- `addAll()` - Adds all `key value pairs` of the other to this `map`
+- `clear()` - Removes all pairs from the `map`
+- `Remove()` - Removes `key` and its `value` if present, from the `map`
+- `forEach()` - Applies `f` to each key-value pair of the `map`
 ### Type Inference
 
 ```dart
