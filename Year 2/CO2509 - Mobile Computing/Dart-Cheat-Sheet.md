@@ -99,29 +99,128 @@ while(i < 10) {
 ## Classes
 
 ```dart
-class Name() {
-  String first;
-  String last;
-  String suffix;
+class Module {
+  // Member variables
+  String id = " ";
+  String name = " ";
+  String email = " ";
+  String course = " ";
+  
+  // Setter for the map
+  set map(Map<String, dynamic> map) {
+    id = map['id'];
+    name = map['name'];
+    email = map['email'];
+    course = map['course'];
+  }
+  
+	// Getter for the map
+  Map<String, dynamic> get module {
+    return {
+      'id': id,
+      'name': name,
+      'email': email,
+      'course': course,
+    };
+  }
+
+	// Constructor
+  Module(studentID, studentName, studentEmail, studentCourse) {
+    id = studentID;
+    name = studentName;
+    email = studentEmail;
+    course = studentCourse;
+  }
+  // Class Method
+  void enrol(String id) {
+    String gNum = "G" + id;
+    print("Student id: $gNum is enrolled");
+  }
 }
 
-class Person() {
-  // properties
-  int id;
-  Name name;
-  String email;
-  String phone;
-  
-  // methods
-  void save() {
-    // do something
+void main() {
+  // Object declaration
+  Module newStudent =
+      Module("001", "Jack", "email@emai.com", "Software Engineering");
+	
+  // Accessing class methods
+  print(newStudent.module);
+  newStudent.enrol(newStudent.id);
+}
+```
+
+### Inheritance
+
+```dart
+class Module {
+  String title = " ";
+
+  void status() {
+    print('module is running');
   }
-  // Constructor
-  person() {
-    
+
+  String get moduleTitle {
+    return title;
+  }
+
+  set moduleTitle(String moduleTitle) {
+    title = moduleTitle;
   }
 }
 ```
 
+The `student` class inherits from `Module`, thus inheriting all of its methods and data members.
 
+```dart
+class Student extends Module {
+  String id = " ";
+  String name = " ";
+  String email = " ";
+  String course = " ";
+
+  set map(Map<String, dynamic> map) {
+    id = map['id'];
+    name = map['name'];
+    email = map['email'];
+    course = map['course'];
+  }
+
+  Map<String, dynamic> get module {
+    return {
+      'id': id,
+      'name': name,
+      'email': email,
+      'course': course,
+    };
+  }
+
+  Student(studentID, studentName, studentEmail, studentCourse) {
+    id = studentID;
+    name = studentName;
+    email = studentEmail;
+    course = studentCourse;
+  }
+  void enrol(String id) {
+    String gNum = "G" + id;
+    print("Student id: $gNum is enrolled");
+  }
+	// override allows this different implementation of the status method in Module class
+  @override
+  void status() {
+    // Super is used to refer to the parent class
+    super.status();
+    print('module is finished');
+  }
+}
+
+```
+
+**Super** is a reference variable which is used to refer immediate parent class objects. It is used to refer to the parent class **properties and methods**. Its most common use is to remove any ambiguity between the parent class and subclass that has methods and properties of the same name.
+
+- <u>Usage:</u>
+  1. The **super** keyword can be used to access data members of the parent class where both parent and child class have members of the same name.
+  2. The **super** keyword can be used to access the method of the parent class when the child class has overridden that method
+  3. Can be used to explicitly call the constructor of the parent class
+
+**@override** is used so a **child class** can give its own implementation to a method which already exists within the **parent class**. This is known as **Method Overriding**. 
 
