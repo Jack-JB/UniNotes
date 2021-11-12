@@ -224,3 +224,37 @@ class Student extends Module {
 
 **@override** is used so a **child class** can give its own implementation to a method which already exists within the **parent class**. This is known as **Method Overriding**. 
 
+### Abstract Classes
+
+Objects cannot be created from an Abstract Class, but it can be sub-classed. An abstract class allows you to create functionality that subclasses can implement or override.
+
+- The word **abstract** precedes a class definition
+- Typical classes can extend abstract classes, but they must override all of its abstract methods
+- Similarly, abstract methods, exist within an abstract class
+- Semi-colons are used instead of a method body
+
+```dart
+// Definition of an abstract class
+abstract class Course {
+  void courseWelcome();
+}
+```
+
+```dart
+// Classes inherit from the abstract class with 'extend'
+class Module extends Course
+```
+
+```dart
+// Override the method within the child class to implement its method
+@override
+  void courseWelcome() {
+    print('Welcome to the course');
+  }
+```
+
+```dart	
+// Abstract class method called using the object of a child class
+newStudent.courseWelcome();
+```
+
