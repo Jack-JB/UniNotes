@@ -20,6 +20,18 @@ main() {
 - **Dynamic** - Can change type at any time
 - **Const** - Value cannot be changed
 
+## Optional Parameters
+
+In Dart we can also have functions that pass optional parameters. In some instances when you don't know how many parameters you will have to pass; you can make certain ones optional. This is achieved by encapsulating the parameter in square brackets `[ ]`
+
+```dart
+String myGradeCalc(int n, int n2, [int n3]) {
+  print(n);
+  print(n2);
+  print(n3); // Optional
+}
+```
+
 ### Arrays
 ```dart
 // Arrays are dynmaic, size isnt required
@@ -149,6 +161,42 @@ void main() {
 }
 ```
 
+### Abstract Classes
+
+Objects cannot be created from an Abstract Class, but it can be sub-classed. An abstract class allows you to create functionality that subclasses can implement or override.
+
+- The word **abstract** precedes a class definition
+- Typical classes can extend abstract classes, but they must override all of its abstract methods
+- Similarly, abstract methods, exist within an abstract class
+- Semi-colons are used instead of a method body
+
+```dart
+// Definition of an abstract class
+abstract class Course {
+  void courseWelcome();
+}
+```
+
+```dart
+// Classes inherit from the abstract class with 'extend'
+class Module extends Course
+```
+
+```dart
+// Override the method within the child class to implement its method
+@override
+  void courseWelcome() {
+    print('Welcome to the course');
+  }
+```
+
+```dart	
+// Abstract class method called using the object of a child class
+newStudent.courseWelcome();
+```
+
+
+
 ### Inheritance
 
 ```dart
@@ -223,38 +271,4 @@ class Student extends Module {
   3. Can be used to explicitly call the constructor of the parent class
 
 **@override** is used so a **child class** can give its own implementation to a method which already exists within the **parent class**. This is known as **Method Overriding**. 
-
-### Abstract Classes
-
-Objects cannot be created from an Abstract Class, but it can be sub-classed. An abstract class allows you to create functionality that subclasses can implement or override.
-
-- The word **abstract** precedes a class definition
-- Typical classes can extend abstract classes, but they must override all of its abstract methods
-- Similarly, abstract methods, exist within an abstract class
-- Semi-colons are used instead of a method body
-
-```dart
-// Definition of an abstract class
-abstract class Course {
-  void courseWelcome();
-}
-```
-
-```dart
-// Classes inherit from the abstract class with 'extend'
-class Module extends Course
-```
-
-```dart
-// Override the method within the child class to implement its method
-@override
-  void courseWelcome() {
-    print('Welcome to the course');
-  }
-```
-
-```dart	
-// Abstract class method called using the object of a child class
-newStudent.courseWelcome();
-```
 
