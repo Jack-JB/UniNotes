@@ -4,6 +4,11 @@
 
 - A reminder of some terminology:
   - The original class is called the **base** class (the **parent**)
+  - A class which inherits from the base class is said to be a **derived** class (the **child**)
+- Assume that the functions of the base class have been declared as **public**
+- Assume that you are using public inheritance
+  - The derived class gets full access to all of the functions of the base class
+
 
 ## Function names
 
@@ -13,7 +18,7 @@
   - This is only possibly because the functions exist in different scopes
 - It is not immediately obvious what happens at run-time
   - Which version of the function will be executed?
-- This is fiddly but no other way to approach the subject except by looking at
+- This is fiddly but no other way to approach the subject except by looking at the different cases
 
 ## An overridden function
 
@@ -28,13 +33,7 @@ void::CBase::DisplayMessage() {
 }
 ```
 
-```cpp
-
-```
-
-
-
-### Classing an overridden function
+### Calling an overridden function
 
 - If you have an object of `CBase` and call the function
 
