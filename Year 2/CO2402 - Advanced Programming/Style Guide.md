@@ -204,3 +204,51 @@ Do note that this style guide is much smaller than a real guide would be!
 - Don’t abbreviate by just removing one character from a word – what’s the point?
 - Abbreviations must be consistent.
 - A variable should only be used for one purpose only.
+
+## JetBrains IntelliJ (CLion, IDEA, etc.) Code Style Config
+
+This XML config can be loaded into any JetBrains IntelliJ IDE to apply the CO2402 programming style
+to these editors.
+
+> Apply from Settings -> Editor -> Code Style -> C/C++ -> [cog icon] -> Import Scheme
+
+
+```xml
+<code_scheme name="Nick Style" version="173">
+  <Objective-C>
+    <option name="NAMESPACE_BRACE_PLACEMENT" value="2" />
+    <option name="FUNCTION_BRACE_PLACEMENT" value="2" />
+  </Objective-C>
+  <Objective-C-extensions>
+    <rules>
+      <rule entity="NAMESPACE" visibility="ANY" specifier="ANY" prefix="" style="CAMEL_CASE" suffix="" />
+      <rule entity="MACRO" visibility="ANY" specifier="ANY" prefix="" style="SCREAMING_SNAKE_CASE" suffix="" />
+      <rule entity="CLASS" visibility="ANY" specifier="ANY" prefix="C" style="PASCAL_CASE" suffix="" />
+      <rule entity="STRUCT" visibility="ANY" specifier="ANY" prefix="S" style="PASCAL_CASE" suffix="" />
+      <rule entity="ENUM" visibility="ANY" specifier="ANY" prefix="E" style="PASCAL_CASE" suffix="" />
+      <rule entity="ENUMERATOR" visibility="ANY" specifier="ANY" prefix="" style="PASCAL_CASE" suffix="" />
+      <rule entity="TYPEDEF" visibility="ANY" specifier="ANY" prefix="" style="CAMEL_CASE" suffix="" />
+      <rule entity="UNION" visibility="ANY" specifier="ANY" prefix="" style="CAMEL_CASE" suffix="" />
+      <rule entity="CLASS_MEMBER_FUNCTION" visibility="ANY" specifier="ANY" prefix="" style="PASCAL_CASE" suffix="" />
+      <rule entity="STRUCT_MEMBER_FUNCTION" visibility="ANY" specifier="ANY" prefix="" style="PASCAL_CASE" suffix="" />
+      <rule entity="CLASS_MEMBER_FIELD" visibility="ANY" specifier="ANY" prefix="m" style="PASCAL_CASE" suffix="" />
+      <rule entity="STRUCT_MEMBER_FIELD" visibility="ANY" specifier="ANY" prefix="" style="CAMEL_CASE" suffix="" />
+      <rule entity="GLOBAL_FUNCTION" visibility="ANY" specifier="ANY" prefix="" style="PASCAL_CASE" suffix="" />
+      <rule entity="GLOBAL_VARIABLE" visibility="ANY" specifier="ANY" prefix="g" style="PASCAL_CASE" suffix="" />
+      <rule entity="PARAMETER" visibility="ANY" specifier="ANY" prefix="" style="CAMEL_CASE" suffix="" />
+      <rule entity="LOCAL_VARIABLE" visibility="ANY" specifier="ANY" prefix="" style="CAMEL_CASE" suffix="" />
+    </rules>
+  </Objective-C-extensions>
+  <codeStyleSettings language="ObjectiveC">
+    <option name="RIGHT_MARGIN" value="90" />
+    <option name="BRACE_STYLE" value="2" />
+    <option name="CLASS_BRACE_STYLE" value="2" />
+    <option name="WRAP_ON_TYPING" value="1" />
+    <indentOptions>
+      <option name="USE_TAB_CHARACTER" value="true" />
+    </indentOptions>
+  </codeStyleSettings>
+</code_scheme>
+```
+
+[Link to Gist with this XML.](https://gist.github.com/Nevexo/7ce3db61b43511f2d225da87e4b30586)
